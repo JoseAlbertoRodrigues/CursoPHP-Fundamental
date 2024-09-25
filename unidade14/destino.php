@@ -6,15 +6,34 @@
     </head>
 
     <body>
-        <pre>
+        <!-- <pre>
             <?php
                 print_r($_POST);
             ?>
-        </pre>
+        </pre> -->
 
         <?php
-            echo $_POST["nome"] . "<br>";
-            echo $_POST["email"] . "<br>";
+            // isset => Pergunta se está configurada uma determinada variável
+
+            if(isset($_POST["nome"])) {
+                $_nome = $_POST["nome"];
+            } else {
+                $_nome = "Sem definição";
+            }
+
+            if(isset($_POST["email"])) {
+                $_email = $_POST["email"];
+            } else {
+                $_email = "Sem definição";
+            }
+
+            echo "Nome: " . $_nome . "<br>";
+            echo "Nome: " . $_email . "<br>";
+            // echo "Nome: " . $_POST["nome"];
+            // echo "Nome: " . $_POST["email"];
+
+            // echo $_POST["nome"] . "<br>";
+            // echo $_POST["email"] . "<br>";
         ?>
     </body>
 </html>
